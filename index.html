@@ -37,12 +37,13 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Animated Background -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Hi, I'm Ibrahim Lari</h1>
+      <!-- This element will display the messages in sequence -->
+      <h1 class="hero-heading"></h1>
       <p>
-        Category Manager at TikTok | Former Operations Program Manager at Microsoft | 
+        Category Manager at TikTok | Former Operations Program Manager at Microsoft |
         Former Business Process Specialist at PlayStation
       </p>
     </div>
@@ -57,17 +58,13 @@
     <div class="container">
       <h2>About Me</h2>
       <p>
-        I’m a creative strategist and innovative problem-solver who lives at 
-        the intersection of business and technology. With a passion for transforming 
-        challenges into sleek, high-impact solutions, I blend data-driven insights 
-        with creative flair to craft experiences that captivate and inspire.
+        I’m a creative strategist and innovative problem-solver who lives at the intersection of business and technology.
+        With a passion for transforming challenges into sleek, high-impact solutions, I blend data-driven insights with creative flair to craft experiences that captivate and inspire.
       </p>
       <p>
-        Whether I’m scaling brands on TikTok Shop, streamlining processes at Microsoft, 
-        or revolutionizing Product support strategies at PlayStation, I bring an 
-        unapologetically bold and dynamic approach to every project. My journey 
-        is defined by a relentless pursuit of excellence, and I thrive on pushing 
-        boundaries to create the extraordinary.
+        Whether I’m scaling brands on TikTok Shop, streamlining processes at Microsoft, or revolutionizing Product support strategies at PlayStation,
+        I bring an unapologetically bold and dynamic approach to every project. My journey is defined by a relentless pursuit of excellence,
+        and I thrive on pushing boundaries to create the extraordinary.
       </p>
     </div>
   </section>
@@ -80,65 +77,45 @@
       <!-- TikTok Experience -->
       <div class="experience-item">
         <div class="experience-header">
-          <!-- Updated TikTok Logo -->
-<img
-  src="tiktok.png"
-  alt="TikTok Logo"
-  class="company-logo"
-/>
+          <img src="images/tiktok.png" alt="TikTok Logo" class="company-logo" />
           <div>
             <h3>TikTok</h3>
             <p><strong>Category Manager</strong></p>
           </div>
         </div>
         <p>
-          Working on scaling brands on TikTok Shop by developing innovative 
-          strategies to drive engagement and conversion. Focused on building 
-          and nurturing partnerships that elevate brand presence on the platform.
+          Working on scaling brands on TikTok Shop by developing innovative strategies to drive engagement and conversion.
+          Focused on building and nurturing partnerships that elevate brand presence on the platform.
         </p>
       </div>
       
       <!-- Microsoft Experience -->
       <div class="experience-item">
         <div class="experience-header">
-          <!-- Microsoft Logo -->
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
-            alt="Microsoft Logo"
-            class="company-logo"
-          />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo" class="company-logo" />
           <div>
             <h3>Microsoft</h3>
             <p><strong>Operations Program Manager</strong></p>
           </div>
         </div>
         <p>
-          Led process optimization for Microsoft Azure contract workflows by 
-          leveraging SQL and Power BI to automate manual processes, significantly 
-          reducing credit issues and streamlining operations.
+          Led process optimization for Microsoft Azure contract workflows by leveraging SQL and Power BI to automate manual processes,
+          significantly reducing credit issues and streamlining operations.
         </p>
       </div>
       
       <!-- PlayStation Experience -->
       <div class="experience-item">
         <div class="experience-header">
-          <!-- Updated PlayStation Logo -->
-          <img
-        <img
-  src="playstation.png"
-  alt="PlayStation Logo"
-  class="company-logo"
-/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/PlayStation_logo.svg" alt="PlayStation Logo" class="company-logo" />
           <div>
             <h3>PlayStation</h3>
             <p><strong>Business Process Specialist</strong></p>
           </div>
         </div>
         <p>
-          Developed and executed strategies for PlayStation Consumer Support 
-          to reduce customer calls for blockbuster live service games, 
-          collaborating cross-functionally with product, marketing, legal, 
-          and UI/UX teams.
+          Developed and executed strategies for PlayStation Consumer Support to reduce customer calls for blockbuster live service games,
+          collaborating cross-functionally with product, marketing, legal, and UI/UX teams.
         </p>
       </div>
     </div>
@@ -150,15 +127,11 @@
       <h2>Contact</h2>
       <p>
         <i class="fa-solid fa-envelope"></i>
-        Email: 
-        <a href="mailto:Ibrahimlari7@gmail.com">Ibrahimlari7@gmail.com</a>
+        Email: <a href="mailto:Ibrahimlari7@gmail.com">Ibrahimlari7@gmail.com</a>
       </p>
       <p>
         <i class="fa-brands fa-linkedin"></i>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/ibrahim-lari-a2069471/" target="_blank">
-          linkedin.com/in/ibrahim-lari-a2069471/
-        </a>
+        LinkedIn: <a href="https://www.linkedin.com/in/ibrahim-lari-a2069471/" target="_blank">linkedin.com/in/ibrahim-lari-a2069471/</a>
       </p>
     </div>
   </section>
@@ -173,11 +146,120 @@
   <!-- AOS Library JS (Optional: For scroll animations) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
-  <!-- Link to external JavaScript -->
-  <script src="scripts.js"></script>
+  <!-- Updated JavaScript for custom cursor, header hide, and typewriter effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ========= Detect Touch Devices =========
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+      // ========= Custom Cursor Setup (Desktop Only) =========
+      if (!isTouchDevice) {
+        const cursor = document.createElement('div');
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+  
+        let mouseX = window.innerWidth / 2,
+            mouseY = window.innerHeight / 2;
+        let cursorX = mouseX,
+            cursorY = mouseY;
+  
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+  
+        function animateCursor() {
+          cursorX += (mouseX - cursorX) * 0.15;
+          cursorY += (mouseY - cursorY) * 0.15;
+          cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+          requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+      }
+  
+      // ========= Header Hide on Scroll (Mobile Only) =========
+      let lastScrollY = window.scrollY;
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768) {
+          if (window.scrollY > lastScrollY) {
+            header.classList.add('header--hidden');
+          } else {
+            header.classList.remove('header--hidden');
+          }
+        }
+        lastScrollY = window.scrollY;
+      });
+  
+      // ========= Typewriter Effect =========
+      // We'll use one element (.hero-heading) to display three messages in sequence:
+      // Message 1: "Hi, I'm Ibrahim Lari" (letter-by-letter)
+      // Message 2: "Welcome, I'm excited for you to learn more about" (letter-by-letter)
+      // Message 3: "My Story" (word-by-word) – this final message remains.
+      const heroHeading = document.querySelector('.hero-heading');
+      const msg1 = "Hi, I'm Ibrahim Lari";
+      const msg2 = "Welcome, I'm excited for you to learn more about";
+      const msg3 = "My Story";
+  
+      // Function to type text letter by letter
+      function typeLetterByLetter(text, element, delay, callback) {
+        element.textContent = "";
+        let index = 0;
+        function typeLetter() {
+          if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeLetter, delay);
+          } else {
+            if (callback) callback();
+          }
+        }
+        typeLetter();
+      }
+  
+      // Function to type text word by word
+      function typeWordByWord(text, element, delay, callback) {
+        element.textContent = "";
+        const words = text.split(" ");
+        let index = 0;
+        function typeWord() {
+          if (index < words.length) {
+            if (index > 0) element.textContent += " ";
+            element.textContent += words[index];
+            index++;
+            setTimeout(typeWord, delay);
+          } else {
+            if (callback) callback();
+          }
+        }
+        typeWord();
+      }
+  
+      // Function to clear the element after a specified delay
+      function clearElement(element, delay, callback) {
+        setTimeout(() => {
+          element.textContent = "";
+          if (callback) callback();
+        }, delay);
+      }
+  
+      // Sequence the messages:
+      // 1. Type msg1 letter-by-letter, then wait and clear.
+      typeLetterByLetter(msg1, heroHeading, 100, () => {
+        clearElement(heroHeading, 1500, () => {
+          // 2. Type msg2 letter-by-letter, then wait and clear.
+          typeLetterByLetter(msg2, heroHeading, 100, () => {
+            clearElement(heroHeading, 1500, () => {
+              // 3. Finally, type msg3 word-by-word. It will remain after completion.
+              typeWordByWord(msg3, heroHeading, 800);
+            });
+          });
+        });
+      });
+    });
+  </script>
   
   <script>
-    // Initialize AOS animations
     AOS.init({
       duration: 1000,
       once: true,
@@ -185,3 +267,4 @@
   </script>
 </body>
 </html>
+
