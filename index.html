@@ -37,12 +37,18 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Video Background -->
   <section id="home" class="hero">
+    <!-- Video Background using your provided snippet -->
+    <video controls class="company-video">
+      <source src="space.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Optional overlay for improved text readability -->
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <!-- This element will display the messages in sequence -->
+      <!-- This element will display the messages via the typewriter effect -->
       <h1 class="hero-heading"></h1>
-    
     </div>
     <!-- Scroll Down Cue -->
     <a href="#about" class="scroll-down">
@@ -55,12 +61,11 @@
     <div class="container">
       <h2>About Me</h2>
       <p>
-      Hi, I’m Ibrahim—a Category Manager at TikTok passionate about leveraging technology, e-commerce, and strategy to drive growth. I’ve streamlined operations at Microsoft and enhanced product support at PlayStation, always focused on innovative solutions.
-
-I thrive in positive, dynamic environments that spark creativity and deliver results. I tackle challenges with professionalism and enthusiasm, making success both impactful and rewarding.
-    
+        Hi, I’m Ibrahim—a Category Manager at TikTok passionate about leveraging technology, e-commerce, and strategy to drive growth. I’ve streamlined operations at Microsoft and enhanced product support at PlayStation, always focused on innovative solutions.
+        <br /><br />
+        I thrive in positive, dynamic environments that spark creativity and deliver results. I tackle challenges with professionalism and enthusiasm, making success both impactful and rewarding.
       </p>
- 
+    </div>
   </section>
 
   <!-- Experience Section -->
@@ -71,12 +76,7 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
       <!-- TikTok Experience -->
       <div class="experience-item">
         <div class="experience-header">
-          <img
-  src="tiktok.png"
-  alt="TikTok Logo"
-  class="company-logo"
-/>
-
+          <img src="tiktok.png" alt="TikTok Logo" class="company-logo" />
           <div>
             <h3>TikTok</h3>
             <p><strong>Category Manager</strong></p>
@@ -106,12 +106,7 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
       <!-- PlayStation Experience -->
       <div class="experience-item">
         <div class="experience-header">
-          <img
-  src="playstation.png"
-  alt="PlayStation Logo"
-  class="company-logo"
-/>
-
+          <img src="playstation.png" alt="PlayStation Logo" class="company-logo" />
           <div>
             <h3>PlayStation</h3>
             <p><strong>Business Process Specialist</strong></p>
@@ -196,16 +191,15 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
       });
   
       // ========= Typewriter Effect =========
-      // We'll use one element (.hero-heading) to display three messages in sequence:
-      // Message 1: "Hi, I'm Ibrahim Lari" (letter-by-letter)
-      // Message 2: "Welcome, I'm excited for you to learn more about" (letter-by-letter)
-      // Message 3: "My Story" (word-by-word) – this final message remains.
+      // Sequence: 
+      // 1. "Hi, I'm Ibrahim Lari" (letter-by-letter), then clear.
+      // 2. "Welcome, I'm excited for you to learn more about" (letter-by-letter), then clear.
+      // 3. "My Story" (word-by-word) – remains on screen.
       const heroHeading = document.querySelector('.hero-heading');
       const msg1 = "Hi, I'm Ibrahim Lari";
       const msg2 = "Welcome, I'm excited for you to learn more about";
       const msg3 = "My Story";
   
-      // Function to type text letter by letter
       function typeLetterByLetter(text, element, delay, callback) {
         element.textContent = "";
         let index = 0;
@@ -221,7 +215,6 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
         typeLetter();
       }
   
-      // Function to type text word by word
       function typeWordByWord(text, element, delay, callback) {
         element.textContent = "";
         const words = text.split(" ");
@@ -239,7 +232,6 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
         typeWord();
       }
   
-      // Function to clear the element after a specified delay
       function clearElement(element, delay, callback) {
         setTimeout(() => {
           element.textContent = "";
@@ -247,14 +239,11 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
         }, delay);
       }
   
-      // Sequence the messages:
-      // 1. Type msg1 letter-by-letter, then wait and clear.
+      // Start the sequence of typewriter messages
       typeLetterByLetter(msg1, heroHeading, 100, () => {
         clearElement(heroHeading, 1500, () => {
-          // 2. Type msg2 letter-by-letter, then wait and clear.
           typeLetterByLetter(msg2, heroHeading, 100, () => {
             clearElement(heroHeading, 1500, () => {
-              // 3. Finally, type msg3 word-by-word. It will remain after completion.
               typeWordByWord(msg3, heroHeading, 800);
             });
           });
@@ -271,4 +260,5 @@ I thrive in positive, dynamic environments that spark creativity and deliver res
   </script>
 </body>
 </html>
+
 
