@@ -5,8 +5,6 @@
   --accent-color: #FFD700;
   --text-color: #fff;
   --body-bg: #f4f4f4;
-  /* Updated hero background: animated gradient with darker colors */
-  --hero-bg: linear-gradient(135deg, #000000, #0a1e3a, #333333, #1c1c1c);
 }
 
 /* ====== Global Styles ====== */
@@ -35,10 +33,9 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out; /* Smooth transition when hiding */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Class to hide header on scroll (toggled via JS) */
 .header--hidden {
   transform: translateY(-100%);
 }
@@ -77,7 +74,7 @@ nav {
   color: var(--accent-color);
 }
 
-/* ====== Hero Section ====== */
+/* ====== Hero Section with Video Background ====== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -88,24 +85,40 @@ nav {
   align-items: center;
   text-align: center;
   color: var(--text-color);
-  background: var(--hero-bg);
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
+  overflow: hidden;
 }
 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Video Background */
+.company-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the video covers the hero area */
+  z-index: -2;
 }
 
-.hero-content h1 {
+/* Optional Overlay for Improved Text Readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Heading (used for the typewriter effect) */
+.hero-heading {
   font-size: 3rem;
   margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
 }
 
 /* Scroll Down Cue */
@@ -132,7 +145,7 @@ nav {
   overflow: hidden;
 }
 
-/* Shine animation overlay for sections */
+/* Shine Animation Overlay for Sections */
 .section::before {
   content: "";
   position: absolute;
@@ -193,15 +206,15 @@ nav {
 .experience-header {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between logo and text */
-  margin-bottom: 1rem; /* Space below the header */
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .company-logo {
-  width: 50px;        /* Adjust as needed */
-  height: auto; 
+  width: 50px;
+  height: auto;
   object-fit: contain;
-  border-radius: 4px; /* Optional */
+  border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -257,7 +270,7 @@ footer {
     margin: 0.5rem 0;
   }
   
-  .hero-content h1 {
+  .hero-heading {
     font-size: 2.5rem;
   }
   
@@ -265,5 +278,3 @@ footer {
     font-size: 1rem;
   }
 }
-
-
