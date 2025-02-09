@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Determine if the device is touch-enabled (mobile/tablet)
+  // ========= Detect Touch Devices =========
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   // ========= Custom Cursor Setup (Desktop Only) =========
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
       requestAnimationFrame(animateCursor);
     }
-
     animateCursor();
   }
 
@@ -49,5 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lastScrollY = window.scrollY;
   });
+
+  // ========= Typewriter Effect for Hero Heading =========
+  const heroHeading = document.querySelector('.hero-content h1');
+  const text = "Hi, I'm Ibrahim Lari";
+  let currentIndex = 0;
+  // Clear any pre-existing text
+  heroHeading.textContent = "";
+
+  function typeWriter() {
+    if (currentIndex < text.length) {
+      heroHeading.textContent += text[currentIndex];
+      currentIndex++;
+      // Adjust the timeout (in milliseconds) for speed; 100ms is a good starting point
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  typeWriter();
 });
+
 
