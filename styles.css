@@ -34,6 +34,12 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: transform 0.3s ease-in-out; /* Added transition for smooth hiding */
+}
+
+/* This class will be toggled via JavaScript to hide the header on scroll */
+.header--hidden {
+  transform: translateY(-100%);
 }
 
 nav {
@@ -193,7 +199,7 @@ nav {
 
 .company-logo {
   width: 50px;        /* Adjust as needed */
-  height: auto; 
+  height: auto;
   object-fit: contain;
   border-radius: 4px; /* optional */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -259,3 +265,4 @@ footer {
     font-size: 1rem;
   }
 }
+
