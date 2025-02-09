@@ -5,8 +5,8 @@
   --accent-color: #FFD700;
   --text-color: #fff;
   --body-bg: #f4f4f4;
-  /* Using a gradient background for the hero section */
-  --hero-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* Updated hero background: animated gradient with darker colors */
+  --hero-bg: linear-gradient(135deg, #000000, #0a1e3a, #333333, #1c1c1c);
 }
 
 /* ====== Global Styles ====== */
@@ -35,9 +35,10 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; /* Smooth transition when hiding */
 }
 
+/* Class to hide header on scroll (toggled via JS) */
 .header--hidden {
   transform: translateY(-100%);
 }
@@ -103,6 +104,10 @@ nav {
   margin-bottom: 1rem;
 }
 
+.hero-content p {
+  font-size: 1.25rem;
+}
+
 /* Scroll Down Cue */
 .scroll-down {
   position: absolute;
@@ -127,7 +132,7 @@ nav {
   overflow: hidden;
 }
 
-/* Shine Animation Overlay for Sections */
+/* Shine animation overlay for sections */
 .section::before {
   content: "";
   position: absolute;
@@ -188,15 +193,15 @@ nav {
 .experience-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1rem; /* Space between logo and text */
+  margin-bottom: 1rem; /* Space below the header */
 }
 
 .company-logo {
-  width: 50px;
-  height: auto;
+  width: 50px;        /* Adjust as needed */
+  height: auto; 
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 4px; /* Optional */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -252,7 +257,7 @@ footer {
     margin: 0.5rem 0;
   }
   
-  .hero-heading {
+  .hero-content h1 {
     font-size: 2.5rem;
   }
   
@@ -260,3 +265,5 @@ footer {
     font-size: 1rem;
   }
 }
+
+
