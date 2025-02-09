@@ -5,7 +5,8 @@
   --accent-color: #FFD700;
   --text-color: #fff;
   --body-bg: #f4f4f4;
-  --hero-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* Updated hero background: animated gradient with darker colors */
+  --hero-bg: linear-gradient(135deg, #000000, #0a1e3a, #333333, #1c1c1c);
 }
 
 /* ====== Global Styles ====== */
@@ -34,10 +35,10 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out; /* Added transition for smooth hiding */
+  transition: transform 0.3s ease-in-out; /* Smooth transition when hiding */
 }
 
-/* This class will be toggled via JavaScript to hide the header on scroll */
+/* Class to hide header on scroll (toggled via JS) */
 .header--hidden {
   transform: translateY(-100%);
 }
@@ -189,19 +190,18 @@ nav {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Add this for the logo + text in the experience header */
 .experience-header {
   display: flex;
   align-items: center;
-  gap: 1rem; /* space between logo and text */
-  margin-bottom: 1rem; /* space below the header */
+  gap: 1rem; /* Space between logo and text */
+  margin-bottom: 1rem; /* Space below the header */
 }
 
 .company-logo {
   width: 50px;        /* Adjust as needed */
-  height: auto;
+  height: auto; 
   object-fit: contain;
-  border-radius: 4px; /* optional */
+  border-radius: 4px; /* Optional */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -265,4 +265,5 @@ footer {
     font-size: 1rem;
   }
 }
+
 
