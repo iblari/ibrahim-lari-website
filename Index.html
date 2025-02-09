@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibrahim Lari | Personal Brand</title>
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-u4YHdYG2O8p6N6ZjPpjZZfr6t8gY3G+8H9TdeN7hI2utqfp+uK3ix/qF+S7skj7XxFJ0I8O0C1n+beBzg8Fn9g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <!-- AOS Library CSS (Optional: For scroll animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Ibrahim Lari</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Animated Background -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Ibrahim Lari</h1>
+      <p>
+        Category Manager at TikTok | Former Operations Program Manager at Microsoft | 
+        Former Business Process Specialist at PlayStation
+      </p>
+    </div>
+    <!-- Scroll Down Cue -->
+    <a href="#about" class="scroll-down">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="section" data-aos="fade-up">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I’m a creative strategist and innovative problem-solver who lives at 
+        the intersection of art and technology. With a passion for transforming 
+        challenges into sleek, high-impact solutions, I blend data-driven insights 
+        with creative flair to craft experiences that captivate and inspire.
+      </p>
+      <p>
+        Whether I’m scaling brands on TikTok Shop, streamlining processes at Microsoft, 
+        or revolutionizing customer support strategies at PlayStation, I bring an 
+        unapologetically bold and dynamic approach to every project. My journey 
+        is defined by a relentless pursuit of excellence, and I thrive on pushing 
+        boundaries to create the extraordinary.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section" data-aos="fade-up">
+    <div class="container">
+      <h2>Experience</h2>
+      
+      <!-- TikTok Experience -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <!-- Updated TikTok Logo -->
+          <img
+            src="images/tiktok.png"
+          alt="TikTok Logo"
+          class="company-logo"
+          />
+          <div>
+            <h3>TikTok</h3>
+            <p><strong>Category Manager</strong></p>
+          </div>
+        </div>
+        <p>
+          Working on scaling brands on TikTok Shop by developing innovative 
+          strategies to drive engagement and conversion. Focused on building 
+          and nurturing partnerships that elevate brand presence on the platform.
+        </p>
+      </div>
+      
+      <!-- Microsoft Experience -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <!-- Microsoft Logo -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+            alt="Microsoft Logo"
+            class="company-logo"
+          />
+          <div>
+            <h3>Microsoft</h3>
+            <p><strong>Operations Program Manager</strong></p>
+          </div>
+        </div>
+        <p>
+          Led process optimization for Microsoft Azure contract workflows by 
+          leveraging SQL and Power BI to automate manual processes, significantly 
+          reducing credit issues and streamlining operations.
+        </p>
+      </div>
+      
+      <!-- PlayStation Experience -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <!-- Updated PlayStation Logo -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d7/PlayStation_logo.svg"
+            alt="PlayStation Logo"
+            class="company-logo"
+          />
+          <div>
+            <h3>PlayStation</h3>
+            <p><strong>Business Process Specialist</strong></p>
+          </div>
+        </div>
+        <p>
+          Developed and executed strategies for PlayStation Consumer Support 
+          to reduce customer calls for blockbuster live service games, 
+          collaborating cross-functionally with product, marketing, legal, 
+          and UI/UX teams.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section" data-aos="fade-up">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        Email: 
+        <a href="mailto:Ibrahimlari7@gmail.com">Ibrahimlari7@gmail.com</a>
+      </p>
+      <p>
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/ibrahim-lari-a2069471/" target="_blank">
+          linkedin.com/in/ibrahim-lari-a2069471/
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ibrahim Lari. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Library JS (Optional: For scroll animations) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Link to external JavaScript -->
+  <script src="scripts.js"></script>
+  
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
+</html>
